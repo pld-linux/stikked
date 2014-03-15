@@ -1,0 +1,16 @@
+--- Stikked-0.8.6/config/stikked.php	2013-11-18 22:52:43.000000000 +0200
++++ Stikked-0.8.6/config/stikked.php	2014-03-15 20:04:57.000000000 +0200
+@@ -15,10 +15,10 @@
+  * The database structure will be created automatically
+  *
+ */
+-$config['db_hostname'] = '127.0.0.1';
++$config['db_hostname'] = 'localhost';
+ $config['db_database'] = 'stikked';
+-$config['db_username'] = 'stikked';
+-$config['db_password'] = 'stikked';
++$config['db_username'] = 'mysql';
++$config['db_password'] = '';
+ 
+ /**
+  * Table prefix
