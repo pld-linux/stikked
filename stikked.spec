@@ -1,7 +1,7 @@
 Summary:	Stikked is an Open-Source PHP Pastebin
 Name:		stikked
 Version:	0.8.6
-Release:	0.7
+Release:	0.9
 License:	CC0
 Group:		Applications/WWW
 Source0:	https://github.com/claudehohl/Stikked/archive/%{version}/%{name}-%{version}.tar.gz
@@ -34,9 +34,22 @@ simple and easy to use user interface.
 %setup -q -n Stikked-%{version}
 %undos -f php
 
+# access restricted by webserver config
+rm htdocs/application/config/index.html
+rm htdocs/application/cache/index.html
+rm htdocs/application/controllers/index.html
+rm htdocs/application/core/index.html
+rm htdocs/application/errors/index.html
+rm htdocs/application/helpers/index.html
+rm htdocs/application/hooks/index.html
+rm htdocs/application/index.html
+rm htdocs/application/libraries/index.html
+rm htdocs/application/logs/index.html
+rm htdocs/application/models/index.html
+rm htdocs/application/third_party/index.html
+
 # this is to simplify install
 mv htdocs/application/config .
-rm config/index.html
 mv config/stikked.php{.dist,}
 
 %patch0 -p1
@@ -46,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_appdir}}
 
 cp -a htdocs/* $RPM_BUILD_ROOT%{_appdir}
-cp -a config/*  $RPM_BUILD_ROOT%{_sysconfdir}
+cp -a config/* $RPM_BUILD_ROOT%{_sysconfdir}
 ln -s %{_sysconfdir} $RPM_BUILD_ROOT%{_appdir}/application/config
 
 cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/apache.conf
