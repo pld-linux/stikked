@@ -1,7 +1,7 @@
 Summary:	Stikked is an Open-Source PHP Pastebin
 Name:		stikked
 Version:	0.8.6
-Release:	0.9
+Release:	0.11
 License:	CC0
 Group:		Applications/WWW
 Source0:	https://github.com/claudehohl/Stikked/archive/%{version}/%{name}-%{version}.tar.gz
@@ -95,4 +95,32 @@ rm -rf $RPM_BUILD_ROOT
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/httpd.conf
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/lighttpd.conf
 %attr(640,root,http) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.php
-%{_appdir}
+%dir %{_appdir}
+%{_appdir}/favicon.ico
+%{_appdir}/index.php
+%{_appdir}/static
+%{_appdir}/system
+%{_appdir}/themes
+%dir %{_appdir}/application
+%{_appdir}/application/cache
+%{_appdir}/application/controllers
+%{_appdir}/application/core
+%{_appdir}/application/errors
+%{_appdir}/application/helpers
+%{_appdir}/application/hooks
+%{_appdir}/application/libraries
+%{_appdir}/application/logs
+%{_appdir}/application/models
+%{_appdir}/application/third_party
+%{_appdir}/application/config
+
+%dir %{_appdir}/application/language
+%{_appdir}/application/language/english
+%lang(de) %{_appdir}/application/language/german
+%lang(es) %{_appdir}/application/language/spanish
+%lang(fr) %{_appdir}/application/language/french
+# no iso639-1 code for swissgerman use iso639-2 code for now
+%lang(gsw) %{_appdir}/application/language/swissgerman
+%lang(nb) %{_appdir}/application/language/norwegian
+%lang(pt) %{_appdir}/application/language/portuguese
+%lang(tr) %{_appdir}/application/language/turkish
