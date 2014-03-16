@@ -1,7 +1,7 @@
 Summary:	Stikked is an Open-Source PHP Pastebin
 Name:		stikked
 Version:	0.8.6
-Release:	0.11
+Release:	0.12
 License:	CC0
 Group:		Applications/WWW
 Source0:	https://github.com/claudehohl/Stikked/archive/%{version}/%{name}-%{version}.tar.gz
@@ -47,6 +47,9 @@ rm htdocs/application/libraries/index.html
 rm htdocs/application/logs/index.html
 rm htdocs/application/models/index.html
 rm htdocs/application/third_party/index.html
+rm htdocs/application/.htaccess
+rm htdocs/application/cache/.htaccess
+rm htdocs/system/.htaccess
 
 # this is to simplify install
 mv htdocs/application/config .
