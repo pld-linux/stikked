@@ -17,6 +17,7 @@ BuildRequires:	rpmbuild(macros) >= 1.553
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(mysql)
 Requires:	php(pcre)
+Requires:	php(xml)
 Requires:	webapps
 Requires:	webserver(access)
 Requires:	webserver(alias)
