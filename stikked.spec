@@ -1,3 +1,6 @@
+# TODO
+# - system geshi
+%define		php_min_version 5.2.4
 Summary:	Stikked is an Open-Source PHP Pastebin
 Name:		stikked
 Version:	0.8.6
@@ -11,6 +14,9 @@ Source2:	lighttpd.conf
 Patch0:		config.patch
 URL:		https://github.com/claudehohl/Stikked
 BuildRequires:	rpmbuild(macros) >= 1.553
+Requires:	php(core) >= %{php_min_version}
+Requires:	php(mysql)
+Requires:	php(pcre)
 Requires:	webapps
 Requires:	webserver(access)
 Requires:	webserver(alias)
