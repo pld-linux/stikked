@@ -14,3 +14,13 @@
  
  /**
   * Table prefix
+--- Stikked-0.8.6/htdocs/index.php~	2014-03-29 00:09:43.000000000 +0200
++++ Stikked-0.8.6/htdocs/index.php	2014-03-29 00:10:49.236802420 +0200
+@@ -38,7 +38,6 @@
+ 	
+ 		case 'testing':
+ 		case 'production':
+-			error_reporting(0);
+ 		break;
+ 
+ 		default:
