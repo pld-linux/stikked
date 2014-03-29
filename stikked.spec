@@ -1,5 +1,3 @@
-# TODO
-# - system geshi
 %define		php_min_version 5.2.4
 Summary:	Stikked is an Open-Source PHP Pastebin
 Name:		stikked
@@ -12,12 +10,14 @@ Source0:	https://github.com/claudehohl/Stikked/archive/%{version}/%{name}-%{vers
 Source1:	apache.conf
 Source2:	lighttpd.conf
 Patch0:		config.patch
+Patch1:		system-geshi.patch
 URL:		https://github.com/claudehohl/Stikked
 BuildRequires:	rpmbuild(macros) >= 1.553
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(mysql)
 Requires:	php(pcre)
 Requires:	php(xml)
+Requires:	php-geshi >= 1.0.8.11
 Requires:	webapps
 Requires:	webserver(access)
 Requires:	webserver(alias)
@@ -63,7 +63,12 @@ rm htdocs/system/.htaccess
 mv htdocs/application/config .
 mv config/stikked.php{.dist,}
 
+# use system geshi package
+rm -r htdocs/application/libraries/geshi
+
 %patch0 -p1
+%patch1 -p1
+
 
 %install
 rm -rf $RPM_BUILD_ROOT
