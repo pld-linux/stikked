@@ -23,6 +23,7 @@ Requires:	webserver(access)
 Requires:	webserver(alias)
 Requires:	webserver(indexfile)
 Requires:	webserver(php)
+Suggests:	php(gd)
 Suggests:	webserver(expires)
 Suggests:	webserver(rewrite)
 BuildArch:	noarch
