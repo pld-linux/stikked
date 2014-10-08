@@ -1,12 +1,21 @@
+# TODO
+# - system packages for:
+#  - codemirror (htdocs/themes/default/js/codemirror)
+#  - crypto-js
+#  - lz-string
+# - fonts (static/fonts)
+# - qrcode
+# - phpqrcode (stikked/application/libraries)
+
 %define		php_min_version 5.2.4
 Summary:	Stikked is an Open-Source PHP Pastebin
 Name:		stikked
-Version:	0.8.6
-Release:	1
+Version:	0.9.0
+Release:	0.2
 License:	CC0
 Group:		Applications/WWW
 Source0:	https://github.com/claudehohl/Stikked/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	0340e32c5a07cb8d1faefe7110309905
+# Source0-md5:	60501ac5bf778144304a794118688ae9
 Source1:	apache.conf
 Source2:	lighttpd.conf
 Patch0:		config.patch
@@ -137,6 +146,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_appdir}/application/language/french
 # no iso639-1 code for swissgerman use iso639-2 code for now
 %lang(gsw) %{_appdir}/application/language/swissgerman
+%lang(ja) %{_appdir}/application/language/japanese
 %lang(nb) %{_appdir}/application/language/norwegian
 %lang(pt) %{_appdir}/application/language/portuguese
+%lang(ru) %{_appdir}/application/language/russian
 %lang(tr) %{_appdir}/application/language/turkish
+%lang(zh_CN) %{_appdir}/application/language/chinese-traditional
+%lang(zh_TW) %{_appdir}/application/language/chinese-simplified
