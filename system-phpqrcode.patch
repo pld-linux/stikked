@@ -1,0 +1,11 @@
+--- Stikked-0.9.0/./htdocs/themes/default/views/view/qr.php~	2014-10-08 23:20:57.572987805 +0300
++++ Stikked-0.9.0/./htdocs/themes/default/views/view/qr.php	2014-10-09 13:10:54.636364691 +0300
+@@ -4,7 +4,7 @@
+  * Function list:
+  * Classes list:
+  */
+-require_once ('./application/libraries/phpqrcode/qrlib.php');
++require_once '/usr/share/php/phpqrcode/phpqrcode.php';
+ $qrurl = $url;
+ 
+ if ($snipurl != false) 

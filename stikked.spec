@@ -20,6 +20,7 @@ Source1:	apache.conf
 Source2:	lighttpd.conf
 Patch0:		config.patch
 Patch1:		system-geshi.patch
+Patch2:		system-phpqrcode.patch
 URL:		https://github.com/claudehohl/Stikked
 BuildRequires:	rpmbuild(macros) >= 1.553
 Requires:	php(core) >= %{php_min_version}
@@ -33,6 +34,7 @@ Requires:	webserver(alias)
 Requires:	webserver(indexfile)
 Requires:	webserver(php)
 Suggests:	php(gd)
+Suggests:	php-phpqrcode
 Suggests:	webserver(expires)
 Suggests:	webserver(rewrite)
 BuildArch:	noarch
@@ -72,12 +74,13 @@ rm htdocs/system/.htaccess
 mv htdocs/application/config .
 mv config/stikked.php{.dist,}
 
-# use system geshi package
+# use system packages
 rm -r htdocs/application/libraries/geshi
+rm -r htdocs/application/libraries/phpqrcode
 
 %patch0 -p1
 %patch1 -p1
-
+%patch2 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
