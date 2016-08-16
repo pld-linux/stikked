@@ -1,5 +1,5 @@
---- Stikked-0.8.6/config/stikked.php	2013-11-18 22:52:43.000000000 +0200
-+++ Stikked-0.8.6/config/stikked.php	2014-03-15 20:04:57.000000000 +0200
+--- Stikked-0.10.0/config/stikked.php~	2015-09-30 15:25:59.000000000 +0300
++++ Stikked-0.10.0/config/stikked.php	2016-08-16 13:07:37.524958709 +0300
 @@ -15,10 +15,10 @@
   * The database structure will be created automatically
   *
@@ -11,16 +11,25 @@
 -$config['db_password'] = 'stikked';
 +$config['db_username'] = 'mysql';
 +$config['db_password'] = '';
+ //$config['db_driver'] = 'sqlite';
  
  /**
-  * Table prefix
---- Stikked-0.8.6/htdocs/index.php~	2014-03-29 00:09:43.000000000 +0200
-+++ Stikked-0.8.6/htdocs/index.php	2014-03-29 00:10:49.236802420 +0200
-@@ -38,7 +38,6 @@
- 	
- 		case 'testing':
- 		case 'production':
--			error_reporting(0);
- 		break;
+--- Stikked-0.10.0/htdocs/index.php~	2016-08-16 13:07:05.000000000 +0300
++++ Stikked-0.10.0/htdocs/index.php	2016-08-16 13:09:35.977792314 +0300
+@@ -53,7 +53,7 @@
+  *
+  * NOTE: If you change these, also change the error_reporting() code below
+  */
+-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
++	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
  
- 		default:
+ /*
+  *---------------------------------------------------------------
+@@ -72,7 +72,6 @@
+ 
+ 	case 'testing':
+ 	case 'production':
+-		ini_set('display_errors', 0);
+ 		if (version_compare(PHP_VERSION, '5.3', '>='))
+ 		{
+ 			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);

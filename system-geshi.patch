@@ -1,11 +1,11 @@
---- Stikked-0.8.6/./htdocs/application/libraries/process.php~	2014-03-29 13:29:38.000000000 +0200
-+++ Stikked-0.8.6/./htdocs/application/libraries/process.php	2014-03-29 13:31:04.566011897 +0200
+--- Stikked-0.10.0/./htdocs/application/libraries/Process.php~	2016-08-16 13:10:05.000000000 +0300
++++ Stikked-0.10.0/./htdocs/application/libraries/Process.php	2016-08-16 13:10:32.597406734 +0300
 @@ -9,7 +9,7 @@
  *
  */
  
 -include_once('geshi/geshi.php');
-+require_once 'geshi.php';
++require_once '/usr/share/php/geshi.php';
  
  /** 
  * Source code processing class / Geshi Wrapper

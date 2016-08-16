@@ -10,12 +10,12 @@
 %define		php_min_version 5.2.4
 Summary:	Stikked is an Open-Source PHP Pastebin
 Name:		stikked
-Version:	0.9.0
+Version:	0.10.0
 Release:	0.2
 License:	CC0
 Group:		Applications/WWW
 Source0:	https://github.com/claudehohl/Stikked/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	60501ac5bf778144304a794118688ae9
+# Source0-md5:	aa7701166c13a88c5aa41416b6dc9acf
 Source1:	apache.conf
 Source2:	lighttpd.conf
 Patch0:		config.patch
