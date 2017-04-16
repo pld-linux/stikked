@@ -10,12 +10,12 @@
 %define		php_min_version 5.2.4
 Summary:	Stikked is an Open-Source PHP Pastebin
 Name:		stikked
-Version:	0.10.0
-Release:	0.2
+Version:	0.11.0
+Release:	1
 License:	CC0
 Group:		Applications/WWW
 Source0:	https://github.com/claudehohl/Stikked/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	aa7701166c13a88c5aa41416b6dc9acf
+# Source0-md5:	fecd7a4d70633e43fde728bfd6226066
 Source1:	apache.conf
 Source2:	lighttpd.conf
 Patch0:		config.patch
@@ -144,13 +144,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_appdir}/application/language
 %{_appdir}/application/language/english
+%lang(da) %{_appdir}/application/language/danish
 %lang(de) %{_appdir}/application/language/german
+%lang(el) %{_appdir}/application/language/greek
 %lang(es) %{_appdir}/application/language/spanish
 %lang(fr) %{_appdir}/application/language/french
 # no iso639-1 code for swissgerman use iso639-2 code for now
 %lang(gsw) %{_appdir}/application/language/swissgerman
+%lang(id) %{_appdir}/application/language/indonesia
 %lang(ja) %{_appdir}/application/language/japanese
+%lang(lt) %{_appdir}/application/language/lithuanian
 %lang(nb) %{_appdir}/application/language/norwegian
+%lang(pl) %{_appdir}/application/language/polish
 %lang(pt) %{_appdir}/application/language/portuguese
 %lang(ru) %{_appdir}/application/language/russian
 %lang(tr) %{_appdir}/application/language/turkish

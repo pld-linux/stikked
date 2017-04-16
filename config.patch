@@ -11,9 +11,9 @@
 -$config['db_password'] = 'stikked';
 +$config['db_username'] = 'mysql';
 +$config['db_password'] = '';
- //$config['db_driver'] = 'sqlite';
  
- /**
+ // If you are using sqlite:
+ // uncomment the configuration lines below.
 --- Stikked-0.10.0/htdocs/index.php~	2016-08-16 13:07:05.000000000 +0300
 +++ Stikked-0.10.0/htdocs/index.php	2016-08-16 13:09:35.977792314 +0300
 @@ -53,7 +53,7 @@
